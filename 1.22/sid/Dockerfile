@@ -4,47 +4,19 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM buildpack-deps:bullseye-scm AS build
+FROM riscv64/buildpack-deps:sid-scm AS build
 
 ENV PATH /usr/local/go/bin:$PATH
 
-ENV GOLANG_VERSION 1.21.9
+ENV GOLANG_VERSION 1.22.2
 
 RUN set -eux; \
 	arch="$(dpkg --print-architecture)"; arch="${arch##*-}"; \
 	url=; \
 	case "$arch" in \
-		'amd64') \
-			url='https://dl.google.com/go/go1.21.9.linux-amd64.tar.gz'; \
-			sha256='f76194c2dc607e0df4ed2e7b825b5847cb37e34fc70d780e2f6c7e805634a7ea'; \
-			;; \
-		'armhf') \
-			url='https://dl.google.com/go/go1.21.9.linux-armv6l.tar.gz'; \
-			sha256='3d53e0fc659a983bbca3ffa373fab26093d8b1d94198a503be19003a1d73ffb3'; \
-			;; \
-		'arm64') \
-			url='https://dl.google.com/go/go1.21.9.linux-arm64.tar.gz'; \
-			sha256='4d169d9cf3dde1692b81c0fd9484fa28d8bc98f672d06bf9db9c75ada73c5fbc'; \
-			;; \
-		'i386') \
-			url='https://dl.google.com/go/go1.21.9.linux-386.tar.gz'; \
-			sha256='a8ba72a03dd7e6e5b8827754153b0dc335361343535b733d666c458e30996b4a'; \
-			;; \
-		'mips64el') \
-			url='https://dl.google.com/go/go1.21.9.linux-mips64le.tar.gz'; \
-			sha256='10e99c0928698a01231df9a8c57b73376380f253005d95cffb932a47f2052bd9'; \
-			;; \
-		'ppc64el') \
-			url='https://dl.google.com/go/go1.21.9.linux-ppc64le.tar.gz'; \
-			sha256='6eadde4149c36dae7d9a9bd9385285db1d0e2988350822f4c72a5eb11ffbfffc'; \
-			;; \
 		'riscv64') \
-			url='https://dl.google.com/go/go1.21.9.linux-riscv64.tar.gz'; \
-			sha256='b92dcc990298d68652e28f3bec57824de99a328b8e584a31490b96fe4bd973c5'; \
-			;; \
-		's390x') \
-			url='https://dl.google.com/go/go1.21.9.linux-s390x.tar.gz'; \
-			sha256='05daee44fc4771b2a2471b678a812de2488f05110976faeb8bbbae740e01e7ae'; \
+			url='https://dl.google.com/go/go1.22.2.linux-riscv64.tar.gz'; \
+			sha256='2e0447ed3294729232e012898a43145defaf2ffbfece2e934edda8bd2775c400'; \
 			;; \
 		*) echo >&2 "error: unsupported architecture '$arch' (likely packaging update needed)"; exit 1 ;; \
 	esac; \
@@ -92,7 +64,7 @@ RUN set -eux; \
 	epoch="$(stat -c '%Y' /usr/local/go)"; \
 	[ "$SOURCE_DATE_EPOCH" = "$epoch" ]
 
-FROM buildpack-deps:bullseye-scm
+FROM buildpack-deps:sid-scm
 
 # install cgo-related dependencies
 RUN set -eux; \
@@ -106,7 +78,7 @@ RUN set -eux; \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.21.9
+ENV GOLANG_VERSION 1.22.2
 
 # don't auto-upgrade the gotoolchain
 # https://github.com/docker-library/golang/issues/472

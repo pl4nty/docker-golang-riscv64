@@ -19,14 +19,6 @@
           "GOARCH": "amd64",
           "GOAMD64": "v1"
         },
-        "supported": true
-      },
-      "arm32v5": {
-        "env": {
-          "GOOS": "linux",
-          "GOARCH": "arm",
-          "GOARM": "5"
-        },
         "supported": false
       },
       "arm32v6": {
@@ -37,7 +29,7 @@
           "GOARCH": "arm",
           "GOARM": "6"
         },
-        "supported": true
+        "supported": false
       },
       "arm32v7": {
         "url": "https://dl.google.com/go/go1.21.9.linux-armv6l.tar.gz",
@@ -47,7 +39,7 @@
           "GOARCH": "arm",
           "GOARM": "7"
         },
-        "supported": true
+        "supported": false
       },
       "arm64v8": {
         "url": "https://dl.google.com/go/go1.21.9.linux-arm64.tar.gz",
@@ -56,7 +48,7 @@
           "GOOS": "linux",
           "GOARCH": "arm64"
         },
-        "supported": true
+        "supported": false
       },
       "darwin-amd64": {
         "url": "https://dl.google.com/go/go1.21.9.darwin-amd64.tar.gz",
@@ -138,7 +130,7 @@
           "GOARCH": "386",
           "GO386": "softfloat"
         },
-        "supported": true
+        "supported": false
       },
       "illumos-amd64": {
         "url": "https://dl.google.com/go/go1.21.9.illumos-amd64.tar.gz",
@@ -183,7 +175,7 @@
           "GOOS": "linux",
           "GOARCH": "mips64le"
         },
-        "supported": true
+        "supported": false
       },
       "mipsle": {
         "url": "https://dl.google.com/go/go1.21.9.linux-mipsle.tar.gz",
@@ -309,7 +301,7 @@
           "GOOS": "linux",
           "GOARCH": "ppc64le"
         },
-        "supported": true
+        "supported": false
       },
       "riscv64": {
         "url": "https://dl.google.com/go/go1.21.9.linux-riscv64.tar.gz",
@@ -327,7 +319,7 @@
           "GOOS": "linux",
           "GOARCH": "s390x"
         },
-        "supported": true
+        "supported": false
       },
       "solaris-amd64": {
         "url": "https://dl.google.com/go/go1.21.9.solaris-amd64.tar.gz",
@@ -350,7 +342,7 @@
           "GOOS": "windows",
           "GOARCH": "amd64"
         },
-        "supported": true
+        "supported": false
       },
       "windows-arm32v6": {
         "url": "https://dl.google.com/go/go1.21.9.windows-arm.zip",
@@ -381,14 +373,8 @@
       }
     },
     "variants": [
-      "bookworm",
-      "bullseye",
-      "alpine3.19",
-      "alpine3.18",
-      "windows/windowsservercore-ltsc2022",
-      "windows/windowsservercore-1809",
-      "windows/nanoserver-ltsc2022",
-      "windows/nanoserver-1809"
+      "sid",
+      "alpineedge"
     ]
   },
   "1.22": {
@@ -411,14 +397,6 @@
           "GOARCH": "amd64",
           "GOAMD64": "v1"
         },
-        "supported": true
-      },
-      "arm32v5": {
-        "env": {
-          "GOOS": "linux",
-          "GOARCH": "arm",
-          "GOARM": "5"
-        },
         "supported": false
       },
       "arm32v6": {
@@ -429,7 +407,7 @@
           "GOARCH": "arm",
           "GOARM": "6"
         },
-        "supported": true
+        "supported": false
       },
       "arm32v7": {
         "url": "https://dl.google.com/go/go1.22.2.linux-armv6l.tar.gz",
@@ -439,7 +417,7 @@
           "GOARCH": "arm",
           "GOARM": "7"
         },
-        "supported": true
+        "supported": false
       },
       "arm64v8": {
         "url": "https://dl.google.com/go/go1.22.2.linux-arm64.tar.gz",
@@ -448,7 +426,7 @@
           "GOOS": "linux",
           "GOARCH": "arm64"
         },
-        "supported": true
+        "supported": false
       },
       "darwin-amd64": {
         "url": "https://dl.google.com/go/go1.22.2.darwin-amd64.tar.gz",
@@ -530,7 +508,7 @@
           "GOARCH": "386",
           "GO386": "softfloat"
         },
-        "supported": true
+        "supported": false
       },
       "illumos-amd64": {
         "url": "https://dl.google.com/go/go1.22.2.illumos-amd64.tar.gz",
@@ -575,7 +553,7 @@
           "GOOS": "linux",
           "GOARCH": "mips64le"
         },
-        "supported": true
+        "supported": false
       },
       "mipsle": {
         "url": "https://dl.google.com/go/go1.22.2.linux-mipsle.tar.gz",
@@ -701,7 +679,7 @@
           "GOOS": "linux",
           "GOARCH": "ppc64le"
         },
-        "supported": true
+        "supported": false
       },
       "riscv64": {
         "url": "https://dl.google.com/go/go1.22.2.linux-riscv64.tar.gz",
@@ -719,7 +697,7 @@
           "GOOS": "linux",
           "GOARCH": "s390x"
         },
-        "supported": true
+        "supported": false
       },
       "solaris-amd64": {
         "url": "https://dl.google.com/go/go1.22.2.solaris-amd64.tar.gz",
@@ -742,7 +720,7 @@
           "GOOS": "windows",
           "GOARCH": "amd64"
         },
-        "supported": true
+        "supported": false
       },
       "windows-arm32v6": {
         "url": "https://dl.google.com/go/go1.22.2.windows-arm.zip",
@@ -773,14 +751,8 @@
       }
     },
     "variants": [
-      "bookworm",
-      "bullseye",
-      "alpine3.19",
-      "alpine3.18",
-      "windows/windowsservercore-ltsc2022",
-      "windows/windowsservercore-1809",
-      "windows/nanoserver-ltsc2022",
-      "windows/nanoserver-1809"
+      "sid",
+      "alpineedge"
     ]
   }
 }
