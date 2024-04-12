@@ -3,17 +3,7 @@ set -Eeuo pipefail
 
 # see https://golang.org/dl/
 potentiallySupportedArches=(
-	amd64
-	arm32v5
-	arm32v6
-	arm32v7
-	arm64v8
-	i386
-	mips64le
-	ppc64le
 	riscv64
-	s390x
-	windows-amd64
 
 	# special case (fallback)
 	src
@@ -152,14 +142,12 @@ for version in "${versions[@]}"; do
 			)
 		),
 		variants: [
-			"bookworm",
-			"bullseye",
+			"sid",
 			(
-				"3.19",
-				"3.18",
+				"edge",
 				empty
 			| "alpine" + .),
-			if .arches | has("windows-amd64") and .["windows-amd64"].url then
+			if {} | has("windows-amd64") and .["windows-amd64"].url then
 				(
 					"ltsc2022",
 					"1809",

@@ -8,7 +8,7 @@
 {{ if is_alpine then ( -}}
 FROM alpine:{{ alpine_version }} AS build
 {{ ) else ( -}}
-FROM buildpack-deps:{{ env.variant }}-scm AS build
+FROM riscv64/buildpack-deps:{{ env.variant }}-scm AS build
 {{ ) end -}}
 
 ENV PATH /usr/local/go/bin:$PATH
